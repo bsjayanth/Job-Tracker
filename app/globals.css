@@ -1,28 +1,26 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
 :root {
-  /* Color tokens */
   --kpb-color-canvas-base: #f7f6f3;
   --kpb-color-ink-primary: #111111;
   --kpb-color-ink-accent: #8b0000;
   --kpb-color-ink-success: #3e6b4f;
   --kpb-color-ink-warning: #b27a1a;
-
-  /* Derived ink opacities (implemented via rgba-like hex approximations) */
-  --kpb-color-border-soft: #d4d0c7; /* ~15% primary on canvas */
-  --kpb-color-border-strong: #a79f8f; /* ~30–40% primary */
-  --kpb-color-muted-text: #44403a; /* ~70% primary */
-
-  /* Spacing scale */
+  --kpb-color-border-soft: #d4d0c7;
+  --kpb-color-border-strong: #a79f8f;
+  --kpb-color-muted-text: #44403a;
   --kpb-space-1: 8px;
   --kpb-space-2: 16px;
   --kpb-space-3: 24px;
   --kpb-space-4: 40px;
   --kpb-space-5: 64px;
-
-  /* Radius & borders */
   --kpb-radius-sm: 4px;
   --kpb-border-width: 1px;
-
-  /* Motion */
   --kpb-transition-fast: 150ms ease-in-out;
   --kpb-transition-base: 180ms ease-in-out;
 }
@@ -39,12 +37,11 @@ body {
   padding: 0;
 }
 
-body.kpb-body {
+body {
   min-height: 100vh;
   background-color: var(--kpb-color-canvas-base);
   color: var(--kpb-color-ink-primary);
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -54,8 +51,6 @@ body.kpb-body {
   display: flex;
   flex-direction: column;
 }
-
-/* Top Bar */
 
 .kpb-topbar {
   display: flex;
@@ -114,8 +109,6 @@ body.kpb-body {
   border-color: var(--kpb-color-ink-success);
 }
 
-/* Context Header */
-
 .kpb-context {
   padding: var(--kpb-space-3) var(--kpb-space-4) var(--kpb-space-3);
   max-width: 1200px;
@@ -136,8 +129,6 @@ body.kpb-body {
   font-size: 16px;
 }
 
-/* Main Layout */
-
 .kpb-main {
   flex: 1;
   padding: 0 var(--kpb-space-4) var(--kpb-space-4);
@@ -157,8 +148,6 @@ body.kpb-body {
 .kpb-secondary {
   align-self: flex-start;
 }
-
-/* Cards */
 
 .kpb-card {
   border-radius: var(--kpb-radius-sm);
@@ -198,8 +187,6 @@ body.kpb-body {
   padding: var(--kpb-space-3);
 }
 
-/* Demo content blocks */
-
 .kpb-demo-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -223,8 +210,6 @@ body.kpb-body {
   flex-wrap: wrap;
   gap: var(--kpb-space-1);
 }
-
-/* Buttons */
 
 .kpb-button {
   appearance: none;
@@ -286,8 +271,6 @@ body.kpb-body {
   opacity: 0.4;
 }
 
-/* Inputs & fields */
-
 .kpb-field {
   display: flex;
   flex-direction: column;
@@ -331,8 +314,6 @@ body.kpb-body {
   opacity: 0.7;
 }
 
-/* Empty & error states */
-
 .kpb-empty {
   display: flex;
   flex-direction: column;
@@ -374,8 +355,6 @@ body.kpb-body {
   color: var(--kpb-color-muted-text);
 }
 
-/* Secondary panel content */
-
 .kpb-secondary__section {
   display: flex;
   flex-direction: column;
@@ -407,8 +386,6 @@ body.kpb-body {
   flex-direction: column;
   gap: var(--kpb-space-1);
 }
-
-/* Footer */
 
 .kpb-footer {
   border-top: var(--kpb-border-width) solid var(--kpb-color-border-soft);
@@ -445,8 +422,6 @@ body.kpb-body {
   font-weight: 500;
 }
 
-/* Responsive adjustments */
-
 @media (max-width: 960px) {
   .kpb-layout {
     grid-template-columns: 1fr;
@@ -478,4 +453,3 @@ body.kpb-body {
     grid-template-columns: 1fr;
   }
 }
-
