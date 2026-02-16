@@ -55,6 +55,98 @@ body.kpb-body {
   flex-direction: column;
 }
 
+/* Primary navigation for Job Notification Tracker */
+
+.kpb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--kpb-space-4);
+  border-bottom: var(--kpb-border-width) solid var(--kpb-color-border-soft);
+  background-color: var(--kpb-color-canvas-base);
+}
+
+.kpb-nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--kpb-space-3);
+}
+
+.kpb-nav__link {
+  position: relative;
+  padding: var(--kpb-space-2) 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--kpb-color-muted-text);
+}
+
+.kpb-nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--kpb-color-ink-accent);
+  transition: width var(--kpb-transition-base);
+}
+
+.kpb-nav__link--active {
+  color: var(--kpb-color-ink-primary);
+}
+
+.kpb-nav__link--active::after {
+  width: 100%;
+}
+
+.kpb-nav__toggle {
+  display: none;
+  align-items: center;
+  gap: var(--kpb-space-1);
+  padding: var(--kpb-space-1) 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--kpb-color-ink-primary);
+}
+
+.kpb-nav__toggle-icon {
+  width: 16px;
+  height: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.kpb-nav__toggle-icon::before,
+.kpb-nav__toggle-icon::after,
+.kpb-nav__toggle-icon::marker {
+  content: "";
+}
+
+.kpb-nav__toggle-icon::before,
+.kpb-nav__toggle-icon::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--kpb-color-ink-primary);
+}
+
+.kpb-nav__toggle-icon::before {
+  top: 0;
+}
+
+.kpb-nav__toggle-icon::after {
+  bottom: 0;
+}
+
+.kpb-nav__toggle-label {
+  font-size: 14px;
+}
+
 /* Top Bar */
 
 .kpb-topbar {
@@ -460,6 +552,32 @@ body.kpb-body {
 @media (max-width: 720px) {
   .kpb-topbar {
     padding: 0 var(--kpb-space-2);
+  }
+
+  .kpb-nav {
+    padding: 0 var(--kpb-space-2);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .kpb-nav__toggle {
+    display: inline-flex;
+  }
+
+  .kpb-nav__links {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--kpb-space-1);
+    padding-bottom: var(--kpb-space-2);
+    display: none;
+  }
+
+  .kpb-nav.kpb-nav--open .kpb-nav__links {
+    display: flex;
+  }
+
+  .kpb-nav__link {
+    padding: var(--kpb-space-1) 0;
   }
 
   .kpb-context {

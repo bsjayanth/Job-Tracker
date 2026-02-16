@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>KodNest Premium Build System – Design Shell</title>
+    <title>KodNest Premium Build System – Job Notification Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -23,14 +23,41 @@
         </div>
       </header>
 
+      <!-- Job Notification Tracker Navigation -->
+      <nav class="kpb-nav" aria-label="Job Notification Tracker">
+        <button
+          class="kpb-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="kpb-nav-links"
+        >
+          <span class="kpb-nav__toggle-icon" aria-hidden="true"></span>
+          <span class="kpb-nav__toggle-label">Menu</span>
+        </button>
+        <div class="kpb-nav__links" id="kpb-nav-links">
+          <a href="/dashboard" data-route="/dashboard" class="kpb-nav__link">
+            Dashboard
+          </a>
+          <a href="/saved" data-route="/saved" class="kpb-nav__link">
+            Saved
+          </a>
+          <a href="/digest" data-route="/digest" class="kpb-nav__link">
+            Digest
+          </a>
+          <a href="/settings" data-route="/settings" class="kpb-nav__link">
+            Settings
+          </a>
+          <a href="/proof" data-route="/proof" class="kpb-nav__link">
+            Proof
+          </a>
+        </div>
+      </nav>
+
       <!-- Context Header -->
       <section class="kpb-context">
-        <h1 class="kpb-context__title">
-          Establish your build workspace shell
-        </h1>
+        <h1 class="kpb-context__title">Dashboard</h1>
         <p class="kpb-context__subtitle">
-          Define the calm, intentional layout that every KodNest build screen
-          will share before adding any product features.
+          This section will be built in the next step.
         </p>
       </section>
 
@@ -43,75 +70,11 @@
               <header class="kpb-card__header">
                 <h2 class="kpb-card__title">Primary workspace canvas</h2>
                 <p class="kpb-card__subtitle">
-                  This area hosts the main interaction for the current step.
-                  Use it for focused configuration, review, or execution flows.
+                  Route-specific workspace content for the Job Notification
+                  Tracker will appear here once implemented.
                 </p>
               </header>
-              <div class="kpb-card__body">
-                <div class="kpb-demo-row">
-                  <div class="kpb-demo-block">
-                    <h3 class="kpb-demo-block__title">Actions</h3>
-                    <div class="kpb-demo-actions">
-                      <button class="kpb-button kpb-button--primary">
-                        Primary action
-                      </button>
-                      <button class="kpb-button kpb-button--secondary">
-                        Secondary action
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="kpb-demo-block">
-                    <h3 class="kpb-demo-block__title">Input pattern</h3>
-                    <label class="kpb-field">
-                      <span class="kpb-field__label">Field label</span>
-                      <input
-                        class="kpb-input"
-                        type="text"
-                        placeholder="Calm, descriptive placeholder"
-                      />
-                      <span class="kpb-field__hint">
-                        Explain what belongs here in one short line.
-                      </span>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="kpb-demo-row">
-                  <div class="kpb-demo-block">
-                    <h3 class="kpb-demo-block__title">Empty state</h3>
-                    <div class="kpb-empty">
-                      <div class="kpb-empty__title">
-                        Nothing configured in this workspace yet
-                      </div>
-                      <div class="kpb-empty__body">
-                        Use this space to introduce the next calm, clear step.
-                        Offer a single primary action to move forward.
-                      </div>
-                      <button class="kpb-button kpb-button--primary">
-                        Start this step
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="kpb-demo-block">
-                    <h3 class="kpb-demo-block__title">Error state</h3>
-                    <div class="kpb-alert kpb-alert--error">
-                      <div class="kpb-alert__title">
-                        We couldn’t validate this configuration.
-                      </div>
-                      <div class="kpb-alert__body">
-                        Review the highlighted fields. When everything looks
-                        correct, try saving again. If the issue persists, copy
-                        the details and share them with your team.
-                      </div>
-                      <button class="kpb-button kpb-button--secondary">
-                        View details
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="kpb-card__body" id="kpb-route-shell"></div>
             </article>
           </div>
 
@@ -217,6 +180,7 @@
         </div>
       </footer>
     </div>
+    <script src="./app.js"></script>
   </body>
 </html>
 
